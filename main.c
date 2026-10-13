@@ -22,5 +22,29 @@ int main()
     }
 
     printf("Perfect, we have %d number of players! Lets enter the names of all the players:\n", nr_of_players);
+
+    char players[6][20] = {0};
+
+    for(int player = 1; player <= nr_of_players; player++) 
+    {
+        printf("Enter player %d name: ", player);
+        scanf("%19s", players[player]);
+        printf("Add player %s\n", players[player]);
+    }
+
+
+    int score_board[6][15] = {0};
+
+    // Initialize the score board with -1 to signal not used yet
+    // if -1, score not used yet!
+    for(int player = 0; player < 6; player++)
+    {
+        for(int score = 0; score < 15; score++)
+        {
+            score_board[player][score] = -1;
+        }
+    }
+
+
     return 0;
 }
